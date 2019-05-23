@@ -32,10 +32,10 @@ self.addEventListener('fetch', function(e) {
     e.respondWith(
         caches.match(e.request).then(function(response) {
             if (response) {
-                console.log('Found ', e.request, ' in cache');
+                // console.log('Found ', e.request, ' in cache');
                 return response;
             } else {
-                console.log('Could not find ', e.request, ' in cache, fetching from source');
+                // console.log('Could not find ', e.request, ' in cache, fetching from source');
                 return fetch(e.request)
                 .then(function(response) {
                     const clonedResponse = response.clone();
